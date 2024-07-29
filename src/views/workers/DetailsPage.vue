@@ -1,7 +1,7 @@
 <template>
-    <div>worker details page</div>
+  <div>worker details page</div>
 </template>
 
 <script setup lang="ts">
-defineProps<{id: string}>()
+defineProps<{ id: string }>()
 </script>

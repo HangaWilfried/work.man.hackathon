@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Layout from '@/views/IndexPage.vue';
+import Layout from '@/views/IndexPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,13 +19,18 @@ const router = createRouter({
           props: true,
           name: 'worker details page',
           component: () => import('@/views/workers/DetailsPage.vue')
-        },
+        }
       ]
     },
     {
       name: 'login page',
       path: '/auth/signin',
       component: () => import('@/views/auth/LoginPage.vue')
+    },
+    {
+      name: 'otp verification page',
+      path: '/auth/otp-code',
+      component: () => import('@/views/auth/OTPCode.vue')
     },
     {
       name: 'account creation page',
@@ -36,7 +41,7 @@ const router = createRouter({
       name: 'settings page',
       path: '/me/settings',
       component: () => import('@/views/SettingsPage.vue')
-    },
+    }
   ]
 })
 

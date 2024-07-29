@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 export const useClientStore = defineStore('client', () => {
-
-  return { }
+  const session = ref({
+    email: ''
+  })
+  return { session }
 })
