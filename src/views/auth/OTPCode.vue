@@ -37,7 +37,12 @@ const performLogin = async (): Promise<void> => {
       type: 'email'
     })
     if (data.session) {
-      await router.push('/')
+      await supabase.from('User').insert({
+        email: clientStore.session.email,
+        id: data.user?.id
+      })
+      clientStore.session.user = data.user
+      await router.push('/workers')
     }
   } catch (error) {
     console.log(error)

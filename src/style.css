@@ -16,6 +16,6 @@
   }
 
   .field {
-    @apply rounded-lg p-2 border outline-none text-gray-600 border-gray-300 focus:border-blue-500;
+    @apply rounded-md px-2 py-1 border outline-none text-gray-600 border-gray-300 focus:border-blue-500;
   }
 }

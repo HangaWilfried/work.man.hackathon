@@ -1,7 +1,14 @@
 <template>
   <div class="field-group">
-    <label :for="text">{{ text }}</label>
-    <input class="field" :type="kind" v-model="model" :id="text" autocomplete="off" />
+    <label v-if="text" :for="text">{{ text }}</label>
+    <input
+      class="field"
+      :placeholder="placeholder"
+      :type="kind"
+      v-model="model"
+      :id="text"
+      autocomplete="off"
+    />
   </div>
 </template>
 
@@ -9,9 +16,12 @@
 const model = defineModel()
 
 type FieldProps = {
-  text: string
+  text?: string
   kind: string
+  placeholder?: string
 }
 
-defineProps<FieldProps>()
+withDefaults(defineProps<FieldProps>(), {
+  text: ''
+})
 </script>

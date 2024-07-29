@@ -42,10 +42,7 @@ const performLogin = async (): Promise<void> => {
   isLoading.value = true
   try {
     await supabase.auth.signInWithOtp({
-      email: user.email,
-      options: {
-        shouldCreateUser: false
-      }
+      email: user.email
     })
 
     clientStore.session.email = user.email
