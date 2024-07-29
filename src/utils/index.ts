@@ -6,7 +6,7 @@ export enum Kind_Field {
 export enum Theme {
   BLUE = 'blue',
   GRAY = 'gray',
-  WHITE='white',
+  WHITE = 'white',
   DARK_BLUE = 'dark_blue',
   LIGHT_GRAY = 'light_gray',
   LIGHT_BLUE = 'light_blue',
