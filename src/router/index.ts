@@ -11,42 +11,45 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'home page',
-          component: () => import('@/views/HomePage.vue')
-        },
-        {
-          path: 'workers',
           name: 'workers page',
           component: () => import('@/views/workers/ListPage.vue')
         },
+        { path: 'workers', redirect: { name: 'workers page' }},
         {
           path: 'workers/:id',
           props: true,
           name: 'worker details page',
           component: () => import('@/views/workers/DetailsPage.vue')
+        },
+        {
+          name: 'settings page',
+          path: 'me/settings',
+          component: () => import('@/views/SettingsPage.vue')
         }
       ]
     },
     {
-      name: 'login page',
-      path: '/auth/signin',
-      component: () => import('@/views/auth/LoginPage.vue')
+      name: 'auth page',
+      path: '/auth',
+      component: () => import('@/views/auth/AuthLayout.vue'),
+      children: [
+        {
+          name: 'login page',
+          path: 'signin',
+          component: () => import('@/views/auth/LoginPage.vue')
+        },
+        {
+          name: 'otp verification page',
+          path: 'otp-code',
+          component: () => import('@/views/auth/OTPCode.vue')
+        },
+        {
+          name: 'account creation page',
+          path: 'signup',
+          component: () => import('@/views/auth/RegistrationPage.vue')
+        },
+      ]
     },
-    {
-      name: 'otp verification page',
-      path: '/auth/otp-code',
-      component: () => import('@/views/auth/OTPCode.vue')
-    },
-    {
-      name: 'account creation page',
-      path: '/auth/signup',
-      component: () => import('@/views/auth/RegistrationPage.vue')
-    },
-    {
-      name: 'settings page',
-      path: '/me/settings',
-      component: () => import('@/views/SettingsPage.vue')
-    }
   ]
 })
 

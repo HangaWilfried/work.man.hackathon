@@ -13,27 +13,27 @@ defineProps<{ theme: Theme; text: string; isLoading?: boolean }>()
 
 <style scoped>
 .blue {
-  @apply flex px-4 py-1 gap-x-2 justify-center items-center bg-blue-800 text-white;
+  @apply flex px-4 py-2 gap-x-2 justify-center items-center bg-blue-800 text-white;
 }
 
 .light_blue {
-  @apply flex px-4 py-1 gap-x-2 justify-center items-center bg-blue-600 text-white;
+  @apply flex px-4 py-2 gap-x-2 justify-center items-center bg-blue-600 text-white;
 }
 
 .extra_light_blue {
-  @apply flex px-4 py-1 gap-x-2 justify-center items-center bg-blue-300 text-white;
+  @apply flex px-4 py-2 gap-x-2 justify-center items-center bg-blue-300 text-white;
 }
 
 .gray {
-  @apply flex px-4 py-1 gap-x-2 items-center bg-gray-200 text-gray-300;
+  @apply flex px-4 py-2 gap-x-2 items-center bg-gray-200 text-gray-300;
 }
 
 .red {
-  @apply flex px-4 py-1 gap-x-2 items-center bg-red-800 text-white font-semibold;
+  @apply flex px-4 py-2 gap-x-2 items-center bg-red-800 text-white font-semibold;
 }
 
 .orange {
-  @apply flex px-4 py-1 gap-x-2 items-center bg-orange-400 text-white;
+  @apply flex px-4 py-2 gap-x-2 items-center bg-orange-400 text-white;
 }
 
 .border_gray {
@@ -45,6 +45,6 @@ defineProps<{ theme: Theme; text: string; isLoading?: boolean }>()
 }
 
 .white {
-  @apply flex px-4 py-1 gap-x-2 items-center text-blue-600 bg-white;
+  @apply flex px-4 py-2 gap-x-2 items-center text-blue-600 bg-white;
 }
 </style>
