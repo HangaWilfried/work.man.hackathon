@@ -1,14 +1,15 @@
 <template>
-  <section class="py-4 sm:py-7 lg:p-10 min-h-screen lg:flex">
-    <section class="flex flex-col gap-7 w-[90%] max-w-[700px] m-auto">
-      <span>Logo</span>
+  <section class="space-y-7 w-[500px] mx-auto">
       <div class="space-y-2">
         <h1 class="text-xl font-black">Sign in to your account</h1>
         <p class="text-sm">
           Not a member ?
-          <RouterLink class="text-blue-800 underline underline-offset-4" to="/auth/signup"
-            >create an account</RouterLink
+          <RouterLink 
+            class="text-blue-800 underline underline-offset-4" 
+            to="/auth/signup"
           >
+            create an account
+          </RouterLink>
         </p>
       </div>
       <form @submit.prevent="performLogin" class="flex flex-col gap-7">
@@ -16,7 +17,6 @@
         <ButtonWrapper :is-loading="isLoading" :theme="Theme.BLUE" text="Sign in" />
       </form>
     </section>
-  </section>
 </template>
 
 <script setup lang="ts">
@@ -46,27 +46,15 @@ const performLogin = async (): Promise<void> => {
     })
 
     clientStore.session.email = user.email
-    await router.push('/auth/otp-code')
+    await router.push({
+      path: "/auth/otp-code",
+      query: {
+        q: 'login'
+      }
+    });
   } catch (error) {
     console.log(error)
   }
   isLoading.value = false
 }
 </script>
-
-<style scoped>
-.bulle {
-  clip-path: circle(48% at 50% 50%);
-  animation: shape infinite 2s linear reverse;
-}
-
-@keyframes shape {
-  0%,
-  40% {
-    clip-path: circle(89% at 62% 98%);
-  }
-  100% {
-    clip-path: circle(48% at 73% 93%);
-  }
-}
-</style>

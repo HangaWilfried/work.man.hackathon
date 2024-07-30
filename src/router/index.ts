@@ -28,19 +28,26 @@ const router = createRouter({
       ]
     },
     {
-      name: 'login page',
-      path: '/auth/signin',
-      component: () => import('@/views/auth/LoginPage.vue')
-    },
-    {
-      name: 'otp verification page',
-      path: '/auth/otp-code',
-      component: () => import('@/views/auth/OTPCode.vue')
-    },
-    {
-      name: 'account creation page',
-      path: '/auth/signup',
-      component: () => import('@/views/auth/RegistrationPage.vue')
+      name: 'auth page',
+      path: '/auth',
+      component: () => import('@/views/auth/AuthLayout.vue'),
+      children: [
+        {
+          name: 'login page',
+          path: 'signin',
+          component: () => import('@/views/auth/LoginPage.vue')
+        },
+        {
+          name: 'otp verification page',
+          path: 'otp-code',
+          component: () => import('@/views/auth/OTPCode.vue')
+        },
+        {
+          name: 'account creation page',
+          path: 'signup',
+          component: () => import('@/views/auth/RegistrationPage.vue')
+        },
+      ]
     },
     {
       name: 'settings page',
