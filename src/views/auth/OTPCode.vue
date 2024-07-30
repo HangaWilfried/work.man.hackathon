@@ -40,7 +40,7 @@ const performLogin = async (): Promise<void> => {
       })
       clientStore.session.user = data.user
       if(route.query.q === "login") await router.push('/workers');
-      else await router.push("/settings");
+      else await router.push("/me/settings");
     }
   } catch (error) {
     console.log(error)

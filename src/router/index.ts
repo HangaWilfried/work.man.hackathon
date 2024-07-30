@@ -11,19 +11,20 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'home page',
-          component: () => import('@/views/HomePage.vue')
-        },
-        {
-          path: 'workers',
           name: 'workers page',
           component: () => import('@/views/workers/ListPage.vue')
         },
+        { path: 'workers', redirect: { name: 'workers page' }},
         {
           path: 'workers/:id',
           props: true,
           name: 'worker details page',
           component: () => import('@/views/workers/DetailsPage.vue')
+        },
+        {
+          name: 'settings page',
+          path: 'me/settings',
+          component: () => import('@/views/SettingsPage.vue')
         }
       ]
     },
@@ -49,11 +50,6 @@ const router = createRouter({
         },
       ]
     },
-    {
-      name: 'settings page',
-      path: '/me/settings',
-      component: () => import('@/views/SettingsPage.vue')
-    }
   ]
 })
 
