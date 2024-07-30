@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      raleway: ["raleway", "sans-serif"],
+    },
   },
   plugins: [
     daisyui,

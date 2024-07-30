@@ -1,22 +1,19 @@
 <template>
   <section class="space-y-7 w-[500px] mx-auto">
-      <div class="space-y-2">
-        <h1 class="text-xl font-black">Sign in to your account</h1>
-        <p class="text-sm">
-          Not a member ?
-          <RouterLink 
-            class="text-blue-800 underline underline-offset-4" 
-            to="/auth/signup"
-          >
-            create an account
-          </RouterLink>
-        </p>
-      </div>
-      <form @submit.prevent="performLogin" class="flex flex-col gap-7">
-        <TextField v-model="user.email" text="email" :kind="Kind_Field.EMAIL" />
-        <ButtonWrapper :is-loading="isLoading" :theme="Theme.BLUE" text="Sign in" />
-      </form>
-    </section>
+    <div class="space-y-2">
+      <h1 class="text-xl font-black">Sign in to your account</h1>
+      <p class="text-sm">
+        Not a member ?
+        <RouterLink class="text-blue-800 underline underline-offset-4" to="/auth/signup">
+          create an account
+        </RouterLink>
+      </p>
+    </div>
+    <form @submit.prevent="performLogin" class="flex flex-col gap-7">
+      <TextField v-model="user.email" text="email" :kind="Kind_Field.EMAIL" />
+      <ButtonWrapper :is-loading="isLoading" :theme="Theme.BLUE" text="Sign in" />
+    </form>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -47,11 +44,11 @@ const performLogin = async (): Promise<void> => {
 
     clientStore.session.email = user.email
     await router.push({
-      path: "/auth/otp-code",
+      path: '/auth/otp-code',
       query: {
         q: 'login'
       }
-    });
+    })
   } catch (error) {
     console.log(error)
   }

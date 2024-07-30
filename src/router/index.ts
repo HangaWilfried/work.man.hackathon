@@ -11,10 +11,14 @@ const router = createRouter({
       children: [
         {
           path: '',
+          name: 'home page',
+          component: () => import('@/views/HomePage.vue')
+        },
+        {
+          path: 'workers',
           name: 'workers page',
           component: () => import('@/views/workers/ListPage.vue')
         },
-        { path: 'workers', redirect: { name: 'workers page' }},
         {
           path: 'workers/:id',
           props: true,
@@ -47,9 +51,9 @@ const router = createRouter({
           name: 'account creation page',
           path: 'signup',
           component: () => import('@/views/auth/RegistrationPage.vue')
-        },
+        }
       ]
-    },
+    }
   ]
 })
 

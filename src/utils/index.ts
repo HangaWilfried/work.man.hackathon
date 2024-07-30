@@ -12,3 +12,11 @@ export enum Theme {
   LIGHT_BLUE = 'light_blue',
   EXTRA_LIGHT_BLUE = 'extra_light_blue'
 }
+
+export enum Job {
+  CONSTRUCTION_WORKER = 'CONSTRUCTION WORKER',
+  ELECTRICIAN = 'ELECTRICIAN',
+  CARPENTER = 'CARPENTER',
+  PAINTER = 'PAINTER',
+  MECHANIC = 'MECHANIC'
+}

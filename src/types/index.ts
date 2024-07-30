@@ -1,4 +1,4 @@
-import { isString } from './../services/pawapay/core/request';
+import { Job } from './../utils/index'
 export type BreadCrumb = {
   path: string
   home: string
@@ -34,9 +34,25 @@ export type Profile = {
     idCardNumber: string
   }
   qualifications: {
-    job: string,
-    experience: string,
+    experience: string
     skills: string[]
   }
   certifications: string[]
+}
+
+export interface Option<T> {
+  get text(): string
+  get data(): T
+}
+
+export class Workman implements Option<keyof typeof Job> {
+  constructor(private key: keyof typeof Job) {}
+
+  get text(): string {
+    return Job[this.key]
+  }
+
+  get data(): keyof typeof Job {
+    return this.key
+  }
 }

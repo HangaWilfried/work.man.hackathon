@@ -16,14 +16,13 @@ import { useClientStore } from '@/stores/client'
 import TextField from '@/components/TextField.vue'
 import ButtonWrapper from '@/components/ButtonWrapper.vue'
 
-
 const clientStore = useClientStore()
 
 const isLoading = ref<boolean>(false)
 const otpCode = ref<string>('')
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
+const router = useRouter()
 
 const performLogin = async (): Promise<void> => {
   isLoading.value = true
@@ -39,8 +38,8 @@ const performLogin = async (): Promise<void> => {
         id: data.user?.id
       })
       clientStore.session.user = data.user
-      if(route.query.q === "login") await router.push('/workers');
-      else await router.push("/me/settings");
+      if (route.query.q === 'login') await router.push('/workers')
+      else await router.push('/me/settings')
     }
   } catch (error) {
     console.log(error)
