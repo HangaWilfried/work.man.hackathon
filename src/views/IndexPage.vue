@@ -46,9 +46,9 @@ import { Workman } from '@/types'
 const clientStore = useClientStore()
 
 const initials = computed(() => {
-  if (clientStore.session.user) {
+  if (clientStore.session?.user && clientStore.session?.user?.username) {
     const [lastname, ...firstname] = clientStore.session.user.username.split('')
-    return lastname + firstname.join('').split('')[0]
+    return lastname + firstname.join('')?.split('')?.[0]
   }
   return ''
 })
