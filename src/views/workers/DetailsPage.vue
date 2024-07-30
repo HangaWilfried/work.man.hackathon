@@ -15,6 +15,9 @@
                   class="w-full h-full rounded-full object-cover"
                 />
               </div>
+              <div class="p-4 flex justify-end">
+                <ButtonWrapper class="!min-w-20 !bg-orange-500" text="Book" :theme="Theme.BLUE" />
+              </div>
             </div>
             <div class="bg-white p-4 pt-10 grid grid-cols-3 gap-4 rounded-lg">
               <div class="flex flex-col">
@@ -109,6 +112,8 @@ import { supabase } from '@/lib'
 import type { Review, Profile } from '@/types'
 import { useRoute } from 'vue-router'
 import BaseImage from '@/components/BaseImage.vue'
+import ButtonWrapper from '@/components/ButtonWrapper.vue'
+import { Theme } from '@/utils'
 
 const clientStore = useClientStore()
 
