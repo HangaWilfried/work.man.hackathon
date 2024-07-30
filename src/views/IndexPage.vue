@@ -59,6 +59,6 @@ const router = useRouter()
 
 const applySearch = async (skill: keyof typeof Job): Promise<void> => {
   clientStore.setSearchText(skill)
-  await router.push('/')
+  await router.push('/workers')
 }
 </script>
