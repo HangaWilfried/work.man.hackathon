@@ -38,7 +38,7 @@ const performLogin = async (): Promise<void> => {
         id: data.user?.id
       })
       clientStore.session.user = data.user
-      if (route.query.q === 'login') await router.push('/workers')
+      if (route.query.q === 'login') await router.push('/')
       else await router.push('/me/settings')
     }
   } catch (error) {
